@@ -54,10 +54,9 @@ Nota: Lembre-se de desativar a opção "Fontes desconhecidas" após a instalaç�
 ![Prototipo](https://github.com/PdrArth/Calculadora-IMC-Andriod/blob/main/appfotos/prototipo.PNG)
 
 
-## Telas e Vídeos
+## Tela
 
 !![Tela](https://github.com/PdrArth/Calculadora-IMC-Andriod/blob/main/appfotos/WhatsApp%20Image%202024-07-30%20at%2014.43.10.jpeg)
-!![Vídeo](https://github.com/PdrArth/Calculadora-IMC-Andriod/blob/main/appfotos/WhatsApp%20Video%202024-07-30%20at%2014.40.22.mp4)
 
 
 ## Documentação de cores
