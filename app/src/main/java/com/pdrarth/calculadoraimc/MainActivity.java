@@ -23,20 +23,19 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
+    //calcuadora
+    Button calcular = binding.Calculadora;
+    //altura
+    TextInputEditText texaltura = binding.altura;
+    //peso
+    TextInputEditText textpeso = binding.editPeso;
+    //Text
+    TextView result = binding.Resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        //calcuadora
-        Button calcular = binding.Calculadora;
-        //altura
-        TextInputEditText texaltura = binding.altura;
-        //peso
-        TextInputEditText textpeso = binding.editPeso;
-        //Text
-        TextView result = binding.Resultado;
 
         binding.Calculadora.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,30 +58,30 @@ public class MainActivity extends AppCompatActivity {
     private void calcular(){
         //aqui convertendo o texto em double
         //e depois eu passo que eu posso digitar com virgula e ele vai passar para ponto usando o replace
-        double peso = Double.parseDouble(binding.editPeso.getText().toString().replace(",","."));
-        double altura = Double.parseDouble(binding.altura.getText().toString().replace(",","."));
+        double peso = Double.parseDouble(textpeso.getText().toString().replace(",","."));
+        double altura = Double.parseDouble(texaltura.getText().toString().replace(",","."));
         double imc = peso / (altura*altura);
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
         if(imc < 18.5){
-            binding.Resultado.setText("Seu IMC "+decimalFormat.format(imc)+" \n Peso baixo");
-            binding.Resultado.setTextColor(getColor(R.color.Yellow));
+            result.setText("Seu IMC "+decimalFormat.format(imc)+" \n Peso baixo");
+            result.setTextColor(getColor(R.color.Yellow));
         } else if (imc >= 18.5 && imc <=24.9) {
-            binding.Resultado.setText("Seu IMC "+decimalFormat.format(imc)+" \n Peso normal");
-            binding.Resultado.setTextColor(getColor(R.color.Chartreuse));
+            result.setText("Seu IMC "+decimalFormat.format(imc)+" \n Peso normal");
+            result.setTextColor(getColor(R.color.Chartreuse));
         } else if (imc >=25.0 && imc<=29.9 ) {
-            binding.Resultado.setText("Seu IMC "+decimalFormat.format(imc)+" \n Peso sobrepeso");
-            binding.Resultado.setTextColor(getColor(R.color.SandyBrown));
+            result.setText("Seu IMC "+decimalFormat.format(imc)+" \n Peso sobrepeso");
+            result.setTextColor(getColor(R.color.SandyBrown));
         } else if (imc >=30.0 && imc<=34.9 ) {
-            binding.Resultado.setText("Seu IMC "+decimalFormat.format(imc)+" \n Obesidade (Grau I)");
-            binding.Resultado.setTextColor(getColor(R.color.Chocolate));
+            result.setText("Seu IMC "+decimalFormat.format(imc)+" \n Obesidade (Grau I)");
+            result.setTextColor(getColor(R.color.Chocolate));
         } else if ((imc>=35.00 && imc <=39.9) ) {
-            binding.Resultado.setText("Seu IMC "+decimalFormat.format(imc)+" \n Obesidade Severa (Grau II)");
-                binding.Resultado.setTextColor(getColor(R.color.Tomato));
+            result.setText("Seu IMC "+decimalFormat.format(imc)+" \n Obesidade Severa (Grau II)");
+                result.setTextColor(getColor(R.color.Tomato));
         }
         else {
-            binding.Resultado.setText("Seu IMC "+decimalFormat.format(imc)+" \n Obesidade Móbida (Grau III)");
-            binding.Resultado.setTextColor(getColor(R.color.Red));
+            result.setText("Seu IMC "+decimalFormat.format(imc)+" \n Obesidade Móbida (Grau III)");
+            result.setTextColor(getColor(R.color.Red));
 
         }
 
