@@ -47,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
                     texaltura.setError("Preencha o campo!");
                 }
                 else {
-                    calcularoraimc();
+                    calcularoraIMC();
                 }
             }
         });
 
     }
-    private void calcularoraimc(){
+    private void calcularoraIMC(){
         //aqui convertendo o texto em double
         //e depois eu passo que eu posso digitar com virgula e ele vai passar para ponto usando o replace
         double peso = Double.parseDouble(binding.editPeso.getText().toString().replace(",","."));
